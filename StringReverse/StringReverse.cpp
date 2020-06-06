@@ -24,4 +24,19 @@ int main()
     std::cout << hello << std::endl;
     stringReverse(hello);
     std::cout << hello << std::endl;
+
+    char car[4] = "car";
+    std::cout << car << std::endl;
+    stringReverse(car);
+    std::cout << car << std::endl;
+
+    char alphabet[27] = "abcdefghijklmnopqrstuvwxyz";
+    std::cout << alphabet << std::endl;
+    stringReverse(alphabet);
+    std::cout << alphabet << std::endl;
+
+    char brownFox[45] = "The quick brown fox jumps over the lazy dog.";
+    std::cout << brownFox << std::endl;
+    stringReverse(brownFox);
+    std::cout << brownFox << std::endl;
 }
