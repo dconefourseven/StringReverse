@@ -2,6 +2,7 @@
 //
 
 #include <iostream>
+#include <cassert>
 
 void stringReverse(char* _str)
 {
@@ -26,6 +27,7 @@ void stringReverse(char* _str)
     }
 }
 
+void testStrings();
 int main()
 {
     char hello[13] = "Hello World!";
@@ -47,4 +49,40 @@ int main()
     std::cout << brownFox << std::endl;
     stringReverse(brownFox);
     std::cout << brownFox << std::endl;
+
+    testStrings();
+}
+
+void testStrings()
+{
+    // Test the the initial input strings are reversed correctly.
+    char hello[13] = "Hello World!";
+    stringReverse(hello);
+    assert(strcmp(hello, "!dlroW olleH") == 0);
+
+    char car[4] = "car";
+    stringReverse(car);
+    assert(strcmp(car, "rac") == 0);
+
+    char alphabet[27] = "abcdefghijklmnopqrstuvwxyz";
+    stringReverse(alphabet);
+    assert(strcmp(alphabet, "zyxwvutsrqponmlkjihgfedcba") == 0);
+
+    char brownFox[45] = "The quick brown fox jumps over the lazy dog.";
+    stringReverse(brownFox);
+    assert(strcmp(brownFox, ".god yzal eht revo spmuj xof nworb kciuq ehT") == 0);
+
+    // Test that they are reversed back to their original state.
+
+    stringReverse(hello);
+    assert(strcmp(hello, "Hello World!") == 0);
+
+    stringReverse(car);
+    assert(strcmp(car, "car") == 0);
+
+    stringReverse(alphabet);
+    assert(strcmp(alphabet, "abcdefghijklmnopqrstuvwxyz") == 0);
+
+    stringReverse(brownFox);
+    assert(strcmp(brownFox, "The quick brown fox jumps over the lazy dog.") == 0);
 }
