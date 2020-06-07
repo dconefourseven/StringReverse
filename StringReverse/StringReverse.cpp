@@ -14,6 +14,9 @@ void stringReverse(char* _str)
     int endIndex = length-1;
 
     // Only go half way since by then, the operation will be complete.
+    // Odd numbers take advantage of properties of integer/integer division.
+    // E.g. "Car" strlen = 3. int 3 / int 2 = 1. So only one iteration is done. 
+    // Only first and last char are swapped. The middle char doesn't need to be swapped.
     while (index < length / 2)
     {
         // Perform the swap without needing a temp
